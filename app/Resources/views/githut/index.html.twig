@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="col-sm-3">
+
+        {{ render (controller('AppBundle:GitHut:profile', { 'username': username })) }}
+
+    </div>
+
+
+    <div class="col-sm-9">
+
+        {{ render (controller('AppBundle:GitHut:repos', { 'username': username })) }}
+
+    </div>
+
+
+
+{% endblock body %}

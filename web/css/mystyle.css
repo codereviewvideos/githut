@@ -1,0 +1,16 @@
+body {
+    padding-top: 90px;
+}
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.social-metric-count {
+    font-size: 26px;
+    text-align: center;
+}
+
+.list-group-item {
+    min-height: 60px;
+}
