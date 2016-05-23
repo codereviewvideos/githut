@@ -66,3 +66,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+
+
+guzzle:
+    clients:
+        8p_guzzle_client:
+            base_url: ""

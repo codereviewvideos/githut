@@ -8,5 +8,15 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
+    guzzle_http_client:
+        class: AppBundle\Service\GuzzleHttpClient
+        arguments:
+            - "@guzzle.client.8p_guzzle_client"
+
+    buzz_http_client:
+        class: AppBundle\Service\BuzzHttpClient
+
     github_api:
         class: AppBundle\Service\GitHubApi
+        arguments:
+            - "@guzzle_http_client"
