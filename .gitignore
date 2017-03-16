@@ -2,7 +2,7 @@
 /app/config/parameters.yml
 /build/
 /phpunit.xml
-/var/*
+/var/bootstrap.php.cache
 !/var/cache
 /var/cache/*
 !var/cache/.gitkeep
