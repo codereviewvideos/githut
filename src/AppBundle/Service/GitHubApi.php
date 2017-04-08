@@ -14,7 +14,6 @@ class GitHubApi
         $this->httpClient = $httpClient;
     }
 
-
     public function getProfile($username)
     {
         $data = $this->httpClient->get('https://api.github.com/users/' . $username);

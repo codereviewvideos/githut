@@ -13,7 +13,14 @@ class GitHutController extends Controller
      */
     public function githutAction(Request $request, $username)
     {
-        $this->get('github_api')->getRepos($username);
+        try {
+            $this->get('github_api')->getRepos($username);
+        } catch (\Exception $e) {
+
+            $this->get('logger')->error('This does not appear to be a valid username on GitHub', [
+                'username' => $username
+            ]);
+        }
 
         return $this->render('githut/index.html.twig', [
             'username'   => $username,
@@ -26,7 +33,12 @@ class GitHutController extends Controller
      */
     public function profileAction(Request $request, $username)
     {
-        $profileData = $this->get('github_api')->getProfile($username);
+        try {
+            $profileData = $this->get('github_api')->getProfile($username);
+        } catch (\Exception $e) {
+
+            return $this->render('githut/no_profile.html.twig');
+        }
 
         return $this->render('githut/profile.html.twig', $profileData);
     }
@@ -37,7 +49,12 @@ class GitHutController extends Controller
      */
     public function reposAction(Request $request, $username)
     {
-        $repoData = $this->get('github_api')->getRepos($username);
+        try {
+            $repoData = $this->get('github_api')->getRepos($username);
+        } catch (\Exception $e) {
+
+            return $this->render('githut/no_repos.html.twig');
+        }
 
         dump($repoData);
 
