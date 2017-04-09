@@ -56,8 +56,6 @@ class GitHutController extends Controller
             return $this->render('githut/no_repos.html.twig');
         }
 
-        dump($repoData);
-
         return $this->render('githut/repos.html.twig', $repoData);
     }
 }
