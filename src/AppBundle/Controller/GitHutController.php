@@ -39,8 +39,6 @@ class GitHutController extends Controller
     {
         $repoData = $this->get('github_api')->getRepos($username);
 
-        dump($repoData);
-
         return $this->render('githut/repos.html.twig', $repoData);
     }
 }
