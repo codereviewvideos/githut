@@ -8,24 +8,7 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
-    guzzle_http_client:
-        class: AppBundle\Service\GuzzleHttpClient
-        arguments:
-            - "@guzzle.client.8p_guzzle_client"
 
-    buzz_http_client:
-        class: AppBundle\Service\BuzzHttpClient
-
-
-    github_api:
-        alias: AppBundle\Service\GitHubApi
-        public: true
-
-    AppBundle\Service\GitHubApi:
-        arguments:
-            - "@guzzle_http_client"
-
-    AppBundle\Service\HttpClientInterface: "@guzzle_http_client"
 
 
     # default configuration for services in *this* file
@@ -52,3 +35,8 @@ services:
         resource: '../../src/AppBundle/Controller'
         public: true
         tags: ['controller.service_arguments']
+
+
+    AppBundle\Service\HttpClientInterface: '@AppBundle\Service\GuzzleHttpClient'
+
+    GuzzleHttp\Client: "@guzzle.client.8p_guzzle_client"

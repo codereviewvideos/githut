@@ -11,10 +11,8 @@ class GitHutController extends Controller
     /**
      * @Route("/{username}", name="githut", defaults={ "username": "codereviewvideos" })
      */
-    public function githutAction($username, GitHubApi $api)
+    public function githutAction($username)
     {
-        $api->getRepos($username);
-
         return $this->render('githut/index.html.twig', [
             'username'   => $username,
         ]);
@@ -24,9 +22,9 @@ class GitHutController extends Controller
     /**
      * @Route("/profile/{username}", name="profile")
      */
-    public function profileAction($username)
+    public function profileAction($username, GitHubApi $api)
     {
-        $profileData = $this->get('github_api')->getProfile($username);
+        $profileData = $api->getProfile($username);
 
         return $this->render('githut/profile.html.twig', $profileData);
     }
@@ -35,9 +33,9 @@ class GitHutController extends Controller
     /**
      * @Route("/repos/{username}", name="repos")
      */
-    public function reposAction($username)
+    public function reposAction($username, GitHubApi $api)
     {
-        $repoData = $this->get('github_api')->getRepos($username);
+        $repoData = $api->getRepos($username);
 
         return $this->render('githut/repos.html.twig', $repoData);
     }
