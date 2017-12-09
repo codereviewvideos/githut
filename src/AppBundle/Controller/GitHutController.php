@@ -2,18 +2,18 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Service\GitHubApi;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 class GitHutController extends Controller
 {
     /**
      * @Route("/{username}", name="githut", defaults={ "username": "codereviewvideos" })
      */
-    public function githutAction(Request $request, $username)
+    public function githutAction($username, GitHubApi $api)
     {
-        $this->get('github_api')->getRepos($username);
+        $api->getRepos($username);
 
         return $this->render('githut/index.html.twig', [
             'username'   => $username,
@@ -24,7 +24,7 @@ class GitHutController extends Controller
     /**
      * @Route("/profile/{username}", name="profile")
      */
-    public function profileAction(Request $request, $username)
+    public function profileAction($username)
     {
         $profileData = $this->get('github_api')->getProfile($username);
 
@@ -35,7 +35,7 @@ class GitHutController extends Controller
     /**
      * @Route("/repos/{username}", name="repos")
      */
-    public function reposAction(Request $request, $username)
+    public function reposAction($username)
     {
         $repoData = $this->get('github_api')->getRepos($username);
 
