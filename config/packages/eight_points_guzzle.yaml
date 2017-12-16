@@ -1,0 +1,4 @@
+eight_points_guzzle:
+    clients:
+        8p_guzzle_client:
+            base_url: ""

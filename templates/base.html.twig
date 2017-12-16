@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Code Review Videos{% endblock %}</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}">
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">My GitHut</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    {% block body %}
+                    wkf;lsks;lfksl;df
+                    {% endblock %}
+                </div>
+            </div>
+
+        </div><!-- /.container -->
+
+        {% block javascripts %}
+
+        {% endblock %}
+    </body>
+</html>
