@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": "^7.2.0",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
         "doctrine/orm": "^2.5",
@@ -31,7 +31,7 @@
         "twig/twig": "^1.0||^2.0",
 
         "guzzlehttp/guzzle": "^6.1",
-        "eightpoints/guzzle-bundle": "^4.5",
+        "eightpoints/guzzle-bundle": "^7.2.1",
         "symfony/web-server-bundle": "^3.4"
     },
     "require-dev": {
@@ -55,11 +55,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ]
-    },
-    "config": {
-        "platform": {
-            "php": "5.5.9"
-        }
     },
     "extra": {
         "symfony-app-dir": "app",

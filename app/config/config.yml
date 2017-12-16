@@ -67,7 +67,7 @@ swiftmailer:
     spool:     { type: memory }
 
 
-guzzle:
+eight_points_guzzle:
     clients:
         8p_guzzle_client:
             base_url: ""

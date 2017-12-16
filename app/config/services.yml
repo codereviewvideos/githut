@@ -39,4 +39,4 @@ services:
 
     AppBundle\Service\HttpClientInterface: '@AppBundle\Service\GuzzleHttpClient'
 
-    GuzzleHttp\Client: "@guzzle.client.8p_guzzle_client"
+    GuzzleHttp\Client: "@eight_points_guzzle.client.8p_guzzle_client"
